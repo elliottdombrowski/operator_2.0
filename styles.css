@@ -13,4 +13,7 @@ body {
   position: relative;
   width: 704px;
   height: 384px;
+  outline: 1px solid black;
+  margin: 0 auto;
+  margin-top: 8rem;
 }
