@@ -13,11 +13,19 @@ class Overworld {
 
     // ON INIT, CREATE NEW INSTANCE OF IMAGE
     // BROWSER MUST PRE-LOAD IMAGES IN MEMORY TO DISPLAY IN CANVAS
+
+    //MAP LOWER LAYER
     const image = new Image();
     image.onload = () => {
       this.ctx.drawImage(image, 0, 0);
     };
-
     image.src = "assets/size-test-export.png";
+
+    //MAIN CHARACTER
+    const hero = new Image();
+    hero.onload = () => {
+      this.ctx.drawImage(hero, 0, 0);
+    };
+    hero.src="assets/sprite-template.png";
   };
 };
