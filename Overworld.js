@@ -9,6 +9,12 @@ class Overworld {
   };
 
   init() {
-    console.log("hello overworld", this);
-  }
+    // console.log("hello overworld", this);
+    const image = new Image();
+    image.onload = () => {
+      this.ctx.drawImage(image, 0, 0);
+    };
+
+    image.src = "assets/size-test-export.png";
+  };
 };
