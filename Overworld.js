@@ -10,6 +10,9 @@ class Overworld {
 
   init() {
     // console.log("hello overworld", this);
+
+    // ON INIT, CREATE NEW INSTANCE OF IMAGE
+    // BROWSER MUST PRE-LOAD IMAGES IN MEMORY TO DISPLAY IN CANVAS
     const image = new Image();
     image.onload = () => {
       this.ctx.drawImage(image, 0, 0);

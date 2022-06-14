@@ -15,5 +15,9 @@ body {
   height: 384px;
   outline: 1px solid black;
   margin: 0 auto;
-  margin-top: 8rem;
+  transform: scale(2) translateY(50%);
+}
+
+.game-container canvas {
+  image-rendering: pixelated;
 }
