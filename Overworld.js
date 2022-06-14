@@ -21,10 +21,10 @@ class Overworld {
 
 
 
-    
+
     //MAIN CHARACTER SPRITE SHEET
-    const x = 0;
-    const y = 0;
+    const x = 8;
+    const y = 6;
 
     const hero = new Image();
     hero.onload = () => {
@@ -34,8 +34,8 @@ class Overworld {
         0, //TOP CUT
         32, //WIDTH OF CUT
         48, //HEIGHT OF CUT
-        x, //WHERE WE DRAW CHARACTER WITHIN CANVAS
-        y,
+        x * 32 - 8, //WHERE WE DRAW CHARACTER WITHIN CANVAS, MULTIPLIED BY MAP GRID, MINUS NUDGING
+        y * 32 - 18,
         32, //DRAWING CHARACTER AT SAME SIZE OF CUT
         48
       );
