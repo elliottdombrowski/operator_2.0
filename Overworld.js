@@ -9,8 +9,6 @@ class Overworld {
   };
 
   init() {
-    // console.log("hello overworld", this);
-
     // ON INIT, CREATE NEW INSTANCE OF IMAGE
     // BROWSER MUST PRE-LOAD IMAGES IN MEMORY TO DISPLAY IN CANVAS
 
@@ -21,10 +19,26 @@ class Overworld {
     };
     image.src = "assets/size-test-export.png";
 
-    //MAIN CHARACTER
+
+
+    
+    //MAIN CHARACTER SPRITE SHEET
+    const x = 0;
+    const y = 0;
+
     const hero = new Image();
     hero.onload = () => {
-      this.ctx.drawImage(hero, 0, 0);
+      this.ctx.drawImage(
+        hero, //IMAGE SRC
+        0, //LEFT CUT
+        0, //TOP CUT
+        32, //WIDTH OF CUT
+        48, //HEIGHT OF CUT
+        x, //WHERE WE DRAW CHARACTER WITHIN CANVAS
+        y,
+        32, //DRAWING CHARACTER AT SAME SIZE OF CUT
+        48
+      );
     };
     hero.src="assets/sprite-template.png";
   };
