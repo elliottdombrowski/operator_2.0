@@ -21,10 +21,28 @@ class Overworld {
 
 
 
-
     //MAIN CHARACTER SPRITE SHEET
     const x = 8;
     const y = 6;
+
+
+    //SHADOW SPRITE
+    const shadow = new Image();
+    shadow.onload = () => {
+      this.ctx.drawImage(
+        shadow,
+        0,
+        0,
+        32,
+        32,
+        x * 32 - 1,
+        y * 32 + 20,
+        16,
+        16
+      );
+    };
+    shadow.src="assets/sprite-shadow.png";
+
 
     const hero = new Image();
     hero.onload = () => {
@@ -41,5 +59,8 @@ class Overworld {
       );
     };
     hero.src="assets/sprite-template.png";
+
+
   };
+
 };
