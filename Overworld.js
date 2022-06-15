@@ -19,48 +19,20 @@ class Overworld {
     };
     image.src = "assets/size-test-export.png";
 
+    //PLACE GAME OBJECTS
+    const hero = new GameObject({
+      x: 8,
+      y: 6,
+    });
+    const npc1 = new GameObject({
+      x: 10,
+      y: 6,
+      src: '/assets/sprite-template.png'
+    });
 
-
-    //MAIN CHARACTER SPRITE SHEET
-    const x = 8;
-    const y = 6;
-
-
-    //SHADOW SPRITE
-    const shadow = new Image();
-    shadow.onload = () => {
-      this.ctx.drawImage(
-        shadow,
-        0,
-        0,
-        32,
-        32,
-        x * 32 - 1,
-        y * 32 + 20,
-        16,
-        16
-      );
-    };
-    shadow.src="assets/sprite-shadow.png";
-
-
-    const hero = new Image();
-    hero.onload = () => {
-      this.ctx.drawImage(
-        hero, //IMAGE SRC
-        0, //LEFT CUT
-        0, //TOP CUT
-        32, //WIDTH OF CUT
-        48, //HEIGHT OF CUT
-        x * 32 - 8, //WHERE WE DRAW CHARACTER WITHIN CANVAS, MULTIPLIED BY MAP GRID, MINUS NUDGING
-        y * 32 - 18,
-        32, //DRAWING CHARACTER AT SAME SIZE OF CUT
-        48
-      );
-    };
-    hero.src="assets/sprite-template.png";
-
-
+    setTimeout(() => {
+      hero.sprite.draw(this.ctx);
+      npc1.sprite.draw(this.ctx);
+    }, 200);
   };
-
 };

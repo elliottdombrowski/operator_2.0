@@ -25,7 +25,7 @@ class Sprite {
     const x = this.gameObject.x * 32 - 8;
     const y = this.gameObject.y * 32 - 18;
 
-    ctx.drawImage(this.image,
+   this.isLoaded && ctx.drawImage(this.image,
       0, 0, //LEFT / TOP CUT
       32, 48, //SIZE OF CUT
       x, y,
