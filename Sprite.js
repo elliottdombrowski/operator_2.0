@@ -8,6 +8,16 @@ class Sprite {
       this.isLoaded = true; //WON'T TRY TO LOAD ASSETS UNTIL FLAG IS SET TO TRUE
     };
 
+    //SET UP SHADOW
+    this.shadow = new Image();
+    this.useShadow = true;
+    if (this.useShadow) {
+      this.shadow.src = '/assets/sprite-shadow.png';
+    }
+    this.shadow.onload = () => {
+      this.isShadowLoaded = true;
+    }
+
     //CONFIGURING ANIMATIONS / INITIAL STATE
     this.animations = config.animations || {
       idleDown: [ [0, 0] ]
@@ -24,6 +34,8 @@ class Sprite {
   draw(ctx) {
     const x = this.gameObject.x * 32 - 8;
     const y = this.gameObject.y * 32 - 18;
+
+    this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
    this.isLoaded && ctx.drawImage(this.image,
       0, 0, //LEFT / TOP CUT

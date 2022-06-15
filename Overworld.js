@@ -31,6 +31,7 @@ class Overworld {
     });
 
     setTimeout(() => {
+      //CALL DRAW FUNCT IN SPRITE.JS, DRAW SPRITE TO SCREEN
       hero.sprite.draw(this.ctx);
       npc1.sprite.draw(this.ctx);
     }, 200);
