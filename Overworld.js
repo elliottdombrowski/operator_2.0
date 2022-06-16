@@ -12,6 +12,15 @@ class Overworld {
   //GAME LOOP
   startGameLoop() {
     const step = () => {
+      this.map.drawLowerImage(this.ctx); //DRAW MAP LOWER LAYER
+
+      //MAP OVER AND DRAW ALL GAME OBJECTS FOR MAP
+      Object.values(this.map.gameObjects).forEach(object => {
+        object.sprite.draw(this.ctx);
+      });
+
+      this.map.drawUpperImage(this.ctx); //DRAW MAP UPPER LAYER
+
       requestAnimationFrame(() => {
         step(); //CALL STEP EVERY TIME BROWSER DETECTS NEW FRAME
       });

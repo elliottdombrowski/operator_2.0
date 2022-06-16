@@ -5,10 +5,10 @@ class OverworldMap {
     this.gameObjects = config.gameObjects;
 
     this.lowerImage = new Image();
-    this.lowerImage.src = config.lowerImage.src;
+    this.lowerImage.src = config.lowerSrc;
 
     this.upperImage = new Image();
-    this.upperImage.src = config.upperImage.src;
+    this.upperImage.src = config.upperSrc;
   };
 
   drawLowerImage(ctx) {
@@ -22,7 +22,7 @@ class OverworldMap {
 
 window.OverworldMaps = {
   ApartmentOne: {
-    lowerSrc: "assets/size-test-export.png",
+    lowerSrc: "/assets/size-test-export.png",
     upperSrc: "",
     //CREATES GAME OBJECTS DYNAMICALLY PER MAP
     gameObjects: {
