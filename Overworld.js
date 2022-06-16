@@ -8,6 +8,16 @@ class Overworld {
     this.ctx = this.canvas.getContext("2d");
   };
 
+  //GAME LOOP
+  startGameLoop() {
+    const step = () => {
+      requestAnimationFrame(() => {
+        step(); //CALL STEP EVERY TIME BROWSER DETECTS NEW FRAME
+      });
+    };
+    step();
+  };
+
   init() {
     // ON INIT, CREATE NEW INSTANCE OF IMAGE
     // BROWSER MUST PRE-LOAD IMAGES IN MEMORY TO DISPLAY IN CANVAS
