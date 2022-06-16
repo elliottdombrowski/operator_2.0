@@ -37,7 +37,7 @@ class Sprite {
 
     this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
-   this.isLoaded && ctx.drawImage(this.image,
+    this.isLoaded && ctx.drawImage(this.image,
       0, 0, //LEFT / TOP CUT
       32, 48, //SIZE OF CUT
       x, y,
