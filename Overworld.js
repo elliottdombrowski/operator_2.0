@@ -34,6 +34,11 @@ class Overworld {
   init() {
     //TELL OVERWORLD WHICH CONTENT MAP TO DRAW DATA FROM
     this.map = new OverworldMap(window.OverworldMaps.ApartmentOne);
+
+    //INIT NEW INSTANCE OF DIRECTIONINPUT AND INIT
+    this.directionInput = new DirectionInput();
+    this.directionInput.init();
+
     //ON INIT, CALL STARTGAMELOOP 
     this.startGameLoop();
   };
