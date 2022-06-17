@@ -21,7 +21,7 @@ class Person extends GameObject {
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
-      const [props, change] = this.directionUpdate[this.direction];
+      const [property, change] = this.directionUpdate[this.direction];
       this[property] += change;
       this.movingProgressRemaining -= 1;
     }
