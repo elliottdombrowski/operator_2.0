@@ -18,8 +18,8 @@ class Overworld {
 
       //MAP OVER AND DRAW ALL GAME OBJECTS FOR MAP
       Object.values(this.map.gameObjects).forEach(object => {
-        // object.x += 0.5;
-        object.sprite.draw(this.ctx);
+        object.update({}) //HANDLE INDIVIDUAL GAME OBJECT STATE UPDATES
+        object.sprite.draw(this.ctx); //DRAW GAME OBJECTS
       });
 
       this.map.drawUpperImage(this.ctx); //DRAW MAP UPPER LAYER

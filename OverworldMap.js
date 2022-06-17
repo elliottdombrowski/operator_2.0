@@ -27,12 +27,12 @@ window.OverworldMaps = {
     //CREATES GAME OBJECTS DYNAMICALLY PER MAP
     gameObjects: {
       hero: new GameObject({
-        x: 8,
-        y: 6,
+        x: utils.withGrid(16),
+        y: utils.withGrid(12),
       }),
       npc1: new GameObject({
-        x: 10,
-        y: 6,
+        x: utils.withGrid(20),
+        y: utils.withGrid(12),
         src: '/assets/sprite-template.png'
       })
     }

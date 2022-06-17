@@ -8,4 +8,9 @@ class GameObject {
       src: config.src || "/assets/sprite-template.png",
     });
   };
+
+  //HANDLE UPDATING STATE FOR GAME OBJECTS
+  update() {
+
+  };
 };
