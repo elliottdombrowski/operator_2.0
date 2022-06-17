@@ -27,6 +27,7 @@ window.OverworldMaps = {
     //CREATES GAME OBJECTS DYNAMICALLY PER MAP
     gameObjects: {
       hero: new Person({
+        isPlayerControlled: true,
         x: utils.withGrid(16),
         y: utils.withGrid(12),
       }),
