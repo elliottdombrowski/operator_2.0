@@ -15,6 +15,10 @@ class DirectionInput {
     }
   }
 
+  get direction() {
+    return this.heldDirections[0]; //RETURN MOST CURRENT VALID INPUT
+  };
+
   init() {
     //TRACK INPUTS ENTERING HELDDIRECTIONS ARRAY
     document.addEventListener("keydown", e => {
