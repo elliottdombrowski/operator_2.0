@@ -7,6 +7,7 @@ class Person extends GameObject {
 
     //DIRECTION SET
     this.directionUpdate = {
+      // "up": ["y", -1, "x", -1],
       "up": ["y", -1],
       "down": ["y", 1],
       "left": ["x", -1],
@@ -29,7 +30,7 @@ class Person extends GameObject {
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
-      const [property, change] = this.directionUpdate[this.direction];
+      const [property, change, prop2, change2] = this.directionUpdate[this.direction];
       this[property] += change;
       this.movingProgressRemaining -= 1;
     }
