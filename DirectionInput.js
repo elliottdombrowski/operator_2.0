@@ -21,7 +21,17 @@ class DirectionInput {
   }
 
   get direction() {
-    return this.heldDirections[0]; //RETURN MOST CURRENT VALID INPUT
+    // console.log(this.heldDirections)
+    if (this.heldDirections[0] === 'up' && this.heldDirections[1] === 'right' || this.heldDirections[0] === 'right' && this.heldDirections[1] === 'up') {
+      return 'ne';
+    } else if (this.heldDirections[0] === 'up' && this.heldDirections[1] === 'left' || this.heldDirections[0] === 'left' && this.heldDirections[1] === 'up') {
+      return 'nw';
+    } else if (this.heldDirections[0] === 'down' && this.heldDirections[1] === 'left' || this.heldDirections[0] === 'left' && this.heldDirections[1] === 'down') {
+      return 'sw';
+    } else if (this.heldDirections[0] === 'down' && this.heldDirections[1] === 'right' || this.heldDirections[0] === 'right' && this.heldDirections[1] === 'down') {
+      return 'se';
+    } else return this.heldDirections[0];
+    // return this.heldDirections[0]; //RETURN MOST CURRENT VALID INPUT
   };
 
   init() {
