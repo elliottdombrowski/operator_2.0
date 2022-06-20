@@ -21,7 +21,10 @@ class DirectionInput {
   }
 
   get direction() {
-    // console.log(this.heldDirections)
+    //REFACTOR LATER.
+
+    //CHECKING 0TH AND 1ST ARRAY POSITIONS TO SUPPORT 8 DIRECTIONAL MOVEMENT.
+    //IF NO VALID COMBINATION OF KEYS, RETURN FIRST VALID DIRECTION
     if (this.heldDirections[0] === 'up' && this.heldDirections[1] === 'right' || this.heldDirections[0] === 'right' && this.heldDirections[1] === 'up') {
       return 'ne';
     } else if (this.heldDirections[0] === 'up' && this.heldDirections[1] === 'left' || this.heldDirections[0] === 'left' && this.heldDirections[1] === 'up') {
@@ -31,7 +34,6 @@ class DirectionInput {
     } else if (this.heldDirections[0] === 'down' && this.heldDirections[1] === 'right' || this.heldDirections[0] === 'right' && this.heldDirections[1] === 'down') {
       return 'se';
     } else return this.heldDirections[0];
-    // return this.heldDirections[0]; //RETURN MOST CURRENT VALID INPUT
   };
 
   init() {
