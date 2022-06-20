@@ -7,16 +7,11 @@ class DirectionInput {
       "KeyS": "down",
       "KeyA": "left",
       "KeyD": "right",
-      "KeyE": "nw",
       
-      // "ArrowUp": "up",
-      // "ArrowDown": "down",
-      // "ArrowLeft": "left",
-      // "ArrowRight": "right",
-      "ArrowUp": "ne",
-      "ArrowDown": "sw",
-      "ArrowLeft": "nw",
-      "ArrowRight": "se",
+      "ArrowUp": "up",
+      "ArrowDown": "down",
+      "ArrowLeft": "left",
+      "ArrowRight": "right",
     }
   }
 
