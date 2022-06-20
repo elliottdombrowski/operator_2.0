@@ -17,6 +17,7 @@ class Person extends GameObject {
 
   //EXTEND UPDATEPOSITION OFF UPDATE METHOD DEFINED IN GAMEOBJECT.JS
   update(state) {
+    // console.log(state);
     this.updatePosition();
 
     //CHECK THAT PLAYER IS NOT CURRENTLY MOVING THROUGH GRID SPACE AND HAS DIRECTION INPUT
@@ -30,7 +31,7 @@ class Person extends GameObject {
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
-      const [property, change, prop2, change2] = this.directionUpdate[this.direction];
+      const [property, change] = this.directionUpdate[this.direction];
       this[property] += change;
       this.movingProgressRemaining -= 1;
     }
