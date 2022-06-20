@@ -12,6 +12,10 @@ class Person extends GameObject {
       "down": ["y", 1],
       "left": ["x", -1],
       "right": ["x", 1],
+      "ne": ["x", 1, "y", -1],
+      "nw": ["x", -1, "y", -1],
+      "sw": ["x", -1, "y", 1],
+      "se": ["x", 1, "y", 1],
     };
   };
 
@@ -31,8 +35,9 @@ class Person extends GameObject {
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
-      const [property, change] = this.directionUpdate[this.direction];
+      const [property, change, prop2, change2] = this.directionUpdate[this.direction];
       this[property] += change;
+      this[prop2] += change2;
       this.movingProgressRemaining -= 1;
     }
   }
