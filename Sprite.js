@@ -32,7 +32,7 @@ class Sprite {
       // "fire-right": [ [0,4], [1,4], [2,4], [3,4] ],
     }
 
-    this.currentAnimation = config.currentAnimation || "idleDown"; //EQUAL TO KEY IN ANIMATIONS SET
+    this.currentAnimation = config.currentAnimation || "idle-down"; //EQUAL TO KEY IN ANIMATIONS SET
     this.currentAnimationFrame = 0; //WHICH ANIMATION FRAME IN ANIMATION ARRAY SHOULD BE SHOWING
     this.animationFrameLimit = config.animationFrameLimit || 16; //HOW MANY GAME LOOP FRAMES TO SHOW EACH SPRITE SHEET CUT FOR // CADENCE
     this.animationFrameProgress = this.animationFrameLimit; //HOW MUCH TIME LEFT BEFORE SHIFTING TO NEXT FRAME
@@ -75,6 +75,6 @@ class Sprite {
       x, y,
       32, 48 //SIZE OF DRAW
     )
-    updateAnimationProgress();
+    this.updateAnimationProgress();
   }
 };
