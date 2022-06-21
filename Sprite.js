@@ -41,6 +41,25 @@ class Sprite {
     this.gameObject = config.gameObject;
   };
 
+  //FIGURE OUT WHICH ANIMATION AND ANIMATION FRAMES ARE CURRENT
+  get frame() {
+    return this.animations[this.currentAnimation][this.currentAnimationFrame];
+  };
+
+  updateAnimationProgress() {
+    //DOWNTICK PROGRESS ON CURRENT FRAME
+    if (this.animationFrameProgress > 0) {
+      this.animationFrameProgress -= 1;
+      return;
+    }
+    this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
+    this.currentAnimationFrame += 1;
+
+    if (this.frame === undefined) {
+      this.currentAnimationFrame = 0;
+    }
+  };
+
   //SET UP IMAGE DRAWING
   draw(ctx) {
     const x = this.gameObject.x - 8;
@@ -48,11 +67,14 @@ class Sprite {
 
     this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
+    const [frameX, frameY] = this.frame;
+
     this.isLoaded && ctx.drawImage(this.image,
-      0, 0, //LEFT / TOP CUT
+      frameX * 32, frameY * 48, //LEFT / TOP CUT
       32, 48, //SIZE OF CUT
       x, y,
       32, 48 //SIZE OF DRAW
     )
+    updateAnimationProgress();
   }
 };
