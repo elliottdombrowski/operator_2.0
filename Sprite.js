@@ -20,6 +20,7 @@ class Sprite {
 
     //CONFIGURING ANIMATIONS / INITIAL STATE
     this.animations = config.animations || {
+      //4 DIRECTIONAL IDLE / WALK ANIMATIONS
       "idle-down": [ [0,0] ],
       "idle-right": [ [0,1] ],
       "idle-up": [ [0,2] ],
@@ -28,7 +29,17 @@ class Sprite {
       "walk-right": [ [1,1], [0,1], [3,1], [0,1] ],
       "walk-up": [ [1,2], [0,2], [3,2], [0,2] ],
       "walk-left": [ [1,3], [0,3], [3,3], [0,3] ],
-
+      
+      //8 DIRECTIONAL IDLE / WALK ANIMATIONS
+      "idle-ne": [ [0,1] ],
+      "idle-nw": [ [0,3] ],
+      "idle-se": [ [0,1] ],
+      "idle-sw": [ [0,3] ],
+      "walk-ne": [ [1,1], [0,1], [3,1], [0,1] ],
+      "walk-nw": [ [1,3], [0,3], [3,3], [0,3] ],
+      "walk-se": [ [1,1], [0,1], [3,1], [0,1] ],
+      "walk-sw": [ [1,3], [0,3], [3,3], [0,3] ],
+      
       // "fire-right": [ [0,4], [1,4], [2,4], [3,4] ],
     }
 

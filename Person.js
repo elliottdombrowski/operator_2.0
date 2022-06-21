@@ -22,6 +22,7 @@ class Person extends GameObject {
   update(state) {
     // console.log(state);
     this.updatePosition();
+    this.updateSprite(state);
 
     //CHECK THAT PLAYER IS NOT CURRENTLY MOVING THROUGH GRID SPACE AND HAS DIRECTION INPUT
     //THEN UPDATE DIRECTION w/ HELD DIRECTION
@@ -39,5 +40,10 @@ class Person extends GameObject {
       this[prop2] += change2;
       this.movingProgressRemaining -= 1;
     }
+  }
+
+  //HANDLING SPRITESHEET UPDATES
+  updateSprite(state) {
+    this.sprite.setAnimation("idle-"+this.direction);
   }
 };
