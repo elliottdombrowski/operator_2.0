@@ -20,7 +20,16 @@ class Sprite {
 
     //CONFIGURING ANIMATIONS / INITIAL STATE
     this.animations = config.animations || {
-      idleDown: [ [0, 0] ]
+      "idle-down": [ [0,0] ],
+      "idle-right": [ [0,1] ],
+      "idle-up": [ [0,2] ],
+      "idle-left": [ [0,3] ],
+      "walk-down": [ [1,0], [0,0], [3,0], [0,0] ],
+      "walk-right": [ [1,1], [0,1], [3,1], [0,1] ],
+      "walk-up": [ [1,2], [0,2], [3,2], [0,2] ],
+      "walk-left": [ [1,3], [0,3], [3,3], [0,3] ],
+
+      // "fire-right": [ [0,4], [1,4], [2,4], [3,4] ],
     }
 
     this.currentAnimation = config.currentAnimation || "idleDown"; //EQUAL TO KEY IN ANIMATIONS SET
