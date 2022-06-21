@@ -46,6 +46,16 @@ class Sprite {
     return this.animations[this.currentAnimation][this.currentAnimationFrame];
   };
 
+  //CALCULATE INTENDED ANIMATION VIA ANIMATIONS OBJECT KEY
+  setAnimation(key) {
+    //CHECK IF ANIMATION IS CHANGING
+    if (this.currentAnimation !== key) {
+      this.currentAnimation = key;
+      this.currentAnimationFrame = 0;
+      this.animationFrameProgress = this.animationFrameLimit;
+    }
+  };
+
   updateAnimationProgress() {
     //DOWNTICK PROGRESS ON CURRENT FRAME
     if (this.animationFrameProgress > 0) {
