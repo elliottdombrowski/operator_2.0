@@ -34,6 +34,8 @@ class Sprite {
 
     this.currentAnimation = config.currentAnimation || "idleDown"; //EQUAL TO KEY IN ANIMATIONS SET
     this.currentAnimationFrame = 0; //WHICH ANIMATION FRAME IN ANIMATION ARRAY SHOULD BE SHOWING
+    this.animationFrameLimit = config.animationFrameLimit || 16; //HOW MANY GAME LOOP FRAMES TO SHOW EACH SPRITE SHEET CUT FOR // CADENCE
+    this.animationFrameProgress = this.animationFrameLimit; //HOW MUCH TIME LEFT BEFORE SHIFTING TO NEXT FRAME
 
     //REFERENCE GAME OBJECT
     this.gameObject = config.gameObject;
