@@ -45,5 +45,9 @@ class Person extends GameObject {
   //HANDLING SPRITESHEET UPDATES
   updateSprite(state) {
     this.sprite.setAnimation("idle-"+this.direction);
-  }
+    
+    if (this.movingProgressRemaining > 0) {
+      this.sprite.setAnimation("walk-"+this.direction);
+    };
+  };
 };

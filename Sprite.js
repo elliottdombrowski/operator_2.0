@@ -73,6 +73,7 @@ class Sprite {
       this.animationFrameProgress -= 1;
       return;
     }
+
     this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
     this.currentAnimationFrame += 1;
 
