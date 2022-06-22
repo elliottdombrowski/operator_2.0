@@ -77,9 +77,9 @@ class Sprite {
     this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
     this.currentAnimationFrame += 1;
 
-    if (this.frame === undefined) {
-      this.currentAnimationFrame = 0;
-    }
+    // if (this.frame === undefined) {
+    //   this.currentAnimationFrame = 0;
+    // }
   };
 
   //SET UP IMAGE DRAWING
