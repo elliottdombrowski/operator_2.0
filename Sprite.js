@@ -55,7 +55,6 @@ class Sprite {
   //FIGURE OUT WHICH ANIMATION AND ANIMATION FRAMES ARE CURRENT
   get frame() {
     let idx = this.currentAnimationFrame % (this.animations[this.currentAnimation].length);
-    // console.log("show idx: " + idx);
     return this.animations[this.currentAnimation][idx];
   };
 
@@ -63,7 +62,6 @@ class Sprite {
   setAnimation(key) {
     //CHECK IF ANIMATION IS CHANGING
     if (this.currentAnimation !== key) {
-      console.log("Does this ever happen?");
       this.currentAnimation = key;
       this.currentAnimationFrame = 0;
       this.animationFrameProgress = this.animationFrameLimit;
@@ -79,13 +77,10 @@ class Sprite {
 
     this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
     this.currentAnimationFrame += 1;
-
-    console.log("current: " + this.currentAnimationFrame);
-    console.log("current anim: " + this.currentAnimation);
     // console.log("frame: " + this.frame);
-    // if (this.frame === undefined) {
-    //   this.currentAnimationFrame = 0;
-    // }
+    if (this.frame === undefined) {
+      this.currentAnimationFrame = 0;
+    }
   };
 
   //SET UP IMAGE DRAWING

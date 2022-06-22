@@ -11,10 +11,10 @@ class Person extends GameObject {
       "down": ["y", 1],
       "left": ["x", -1],
       "right": ["x", 1],
-      "ne": ["x", 1, "y", -1],
-      "nw": ["x", -1, "y", -1],
-      "sw": ["x", -1, "y", 1],
-      "se": ["x", 1, "y", 1],
+      "ne": ["x", 0.7, "y", -0.7],
+      "nw": ["x", -0.7, "y", -0.7],
+      "sw": ["x", -0.7, "y", 0.7],
+      "se": ["x", 0.7, "y", 0.7],
     };
   };
 
@@ -28,15 +28,13 @@ class Person extends GameObject {
     //THEN UPDATE DIRECTION w/ HELD DIRECTION
     if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
       this.direction = state.arrow;
-      this.movingProgressRemaining = 16; //RESET MOVINGPROGRESS CONTAINER
-      console.log("adding some moving progress");
+      this.movingProgressRemaining = 16; //RESET MOVINGPROGRESS COUNTER
     }
   };
 
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
-      console.log("in update Pos");
       const [prop1, change1, prop2, change2] = this.directionUpdate[this.direction];
       this[prop1] += change1;
       this[prop2] += change2;
@@ -53,6 +51,5 @@ class Person extends GameObject {
     if (state.arrow) {
       this.sprite.setAnimation("walk-"+this.direction);
     };
-    console.log("anim: " + this.sprite.currentAnimation);
   };
 };
