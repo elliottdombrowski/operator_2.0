@@ -29,12 +29,14 @@ class Person extends GameObject {
     if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
       this.direction = state.arrow;
       this.movingProgressRemaining = 16; //RESET MOVINGPROGRESS CONTAINER
+      console.log("adding some moving progress");
     }
   };
 
   //HANDLING POSITION UPDATES FOR PLAYER / NPC MOVEMENT SPECIFICALLY
   updatePosition() {
     if (this.movingProgressRemaining > 0) {
+      console.log("in update Pos");
       const [prop1, change1, prop2, change2] = this.directionUpdate[this.direction];
       this[prop1] += change1;
       this[prop2] += change2;
@@ -44,10 +46,13 @@ class Person extends GameObject {
 
   //HANDLING SPRITESHEET UPDATES
   updateSprite(state) {
-    this.sprite.setAnimation("idle-"+this.direction);
+    if (!state.arrow) {
+      this.sprite.setAnimation("idle-"+this.direction);
+    }
     
-    if (this.movingProgressRemaining > 0) {
+    if (state.arrow) {
       this.sprite.setAnimation("walk-"+this.direction);
     };
+    console.log("anim: " + this.sprite.currentAnimation);
   };
 };

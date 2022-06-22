@@ -22,6 +22,7 @@ class Overworld {
         object.update({
           arrow: this.directionInput.direction
         });
+        //console.log(object.sprite);
         object.sprite.draw(this.ctx); //DRAW GAME OBJECTS
       });
 

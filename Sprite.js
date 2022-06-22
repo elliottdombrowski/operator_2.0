@@ -54,13 +54,16 @@ class Sprite {
 
   //FIGURE OUT WHICH ANIMATION AND ANIMATION FRAMES ARE CURRENT
   get frame() {
-    return this.animations[this.currentAnimation][this.currentAnimationFrame];
+    let idx = this.currentAnimationFrame % (this.animations[this.currentAnimation].length);
+    // console.log("show idx: " + idx);
+    return this.animations[this.currentAnimation][idx];
   };
 
   //CALCULATE INTENDED ANIMATION VIA ANIMATIONS OBJECT KEY
   setAnimation(key) {
     //CHECK IF ANIMATION IS CHANGING
     if (this.currentAnimation !== key) {
+      console.log("Does this ever happen?");
       this.currentAnimation = key;
       this.currentAnimationFrame = 0;
       this.animationFrameProgress = this.animationFrameLimit;
@@ -77,6 +80,9 @@ class Sprite {
     this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
     this.currentAnimationFrame += 1;
 
+    console.log("current: " + this.currentAnimationFrame);
+    console.log("current anim: " + this.currentAnimation);
+    // console.log("frame: " + this.frame);
     // if (this.frame === undefined) {
     //   this.currentAnimationFrame = 0;
     // }
@@ -89,7 +95,11 @@ class Sprite {
 
     this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
+    // console.log("current pre: " + this.currentAnimationFrame);
+    // console.log("frame pre: " + this.frame);
     const [frameX, frameY] = this.frame;
+
+    // console.log("frameX, frameY: " + frameX + "," + frameY);
 
     this.isLoaded && ctx.drawImage(this.image,
       frameX * 32, frameY * 48, //LEFT / TOP CUT
@@ -97,6 +107,8 @@ class Sprite {
       x, y,
       32, 48 //SIZE OF DRAW
     )
+    
     this.updateAnimationProgress();
+
   }
 };
