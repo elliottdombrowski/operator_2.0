@@ -20,7 +20,6 @@ class Person extends GameObject {
 
   //EXTEND UPDATEPOSITION OFF UPDATE METHOD DEFINED IN GAMEOBJECT.JS
   update(state) {
-    // console.log(state);
     this.updatePosition();
     this.updateSprite(state);
 
@@ -44,7 +43,7 @@ class Person extends GameObject {
 
   //HANDLING SPRITESHEET UPDATES
   updateSprite(state) {
-    if (!state.arrow) {
+    if (this.isPlayerControlled && this.movingProgressRemaining === 0 && !state.arrow) {
       this.sprite.setAnimation("idle-"+this.direction);
     }
     
