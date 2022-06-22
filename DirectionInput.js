@@ -12,6 +12,8 @@ class DirectionInput {
       "ArrowDown": "down",
       "ArrowLeft": "left",
       "ArrowRight": "right",
+
+      "KeyF": "fire", //fire right
     }
   }
 

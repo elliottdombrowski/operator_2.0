@@ -40,7 +40,7 @@ class Sprite {
       "walk-se": [ [1,1], [0,1], [3,1], [0,1] ],
       "walk-sw": [ [1,3], [0,3], [3,3], [0,3] ],
       
-      // "fire-right": [ [0,4], [1,4], [2,4], [3,4] ],
+      "fire": [ [0,4], [1,4], [2,4], [3,4] ],
     }
 
     this.currentAnimation = config.currentAnimation || "idle-down"; //EQUAL TO KEY IN ANIMATIONS SET
@@ -77,7 +77,7 @@ class Sprite {
 
     this.animationFrameProgress = this.animationFrameLimit; //IF 0, RESET COUNTER
     this.currentAnimationFrame += 1;
-    // console.log("frame: " + this.frame);
+    
     if (this.frame === undefined) {
       this.currentAnimationFrame = 0;
     }
