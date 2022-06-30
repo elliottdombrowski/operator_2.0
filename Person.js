@@ -43,6 +43,7 @@ class Person extends GameObject {
 
   //HANDLING SPRITESHEET UPDATES
   updateSprite(state) {
+    console.log("state arrow- ", state.arrow);
     if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow === 'fire') {
       this.sprite.setAnimation("fire");
       return;

@@ -60,6 +60,7 @@ class Sprite {
 
   //CALCULATE INTENDED ANIMATION VIA ANIMATIONS OBJECT KEY
   setAnimation(key) {
+    console.log('key- ', key);
     //CHECK IF ANIMATION IS CHANGING
     if (this.currentAnimation !== key) {
       this.currentAnimation = key;
