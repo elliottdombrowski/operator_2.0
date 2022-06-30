@@ -13,7 +13,7 @@ class DirectionInput {
       "ArrowLeft": "left",
       "ArrowRight": "right",
 
-      "KeyF": "fire", //fire right
+      "KeyF": "fire-right", //fire right
     }
   }
 
@@ -37,7 +37,7 @@ class DirectionInput {
     //TRACK INPUTS ENTERING HELDDIRECTIONS ARRAY
     document.addEventListener("keydown", e => {
       const dir = this.map[e.code]; //CHECK IF KEY PRESSED IS VALID INPUT
-
+      
       if (dir && this.heldDirections.indexOf(dir) === -1) {
         this.heldDirections.unshift(dir);
       };
