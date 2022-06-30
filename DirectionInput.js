@@ -13,7 +13,7 @@ class DirectionInput {
       "ArrowLeft": "left",
       "ArrowRight": "right",
 
-      "KeyF": "fire-right", //fire right
+      "KeyF": "fire", //fire right
     }
   }
 
@@ -30,6 +30,8 @@ class DirectionInput {
       return 'sw';
     } else if (this.heldDirections[0] === 'down' && this.heldDirections[1] === 'right' || this.heldDirections[0] === 'right' && this.heldDirections[1] === 'down') {
       return 'se';
+    } else if (this.heldDirections[0] === 'fire') {
+      return 'fire';
     } else return this.heldDirections[0];
   };
 
