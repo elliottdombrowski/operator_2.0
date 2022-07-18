@@ -31,16 +31,16 @@ class Sprite {
       "walk-down": [ [0,3], [1,3], [2,3], [0,3], [3,3], [4,3] ],
       
       //8 DIRECTIONAL IDLE / WALK ANIMATIONS
-      "idle-ne": [ [0,1] ],
-      "idle-nw": [ [0,3] ],
-      "idle-se": [ [0,1] ],
-      "idle-sw": [ [0,3] ],
-      "walk-ne": [ [1,1], [0,1], [3,1], [0,1] ],
-      "walk-nw": [ [1,3], [0,3], [3,3], [0,3] ],
-      "walk-se": [ [1,1], [0,1], [3,1], [0,1] ],
-      "walk-sw": [ [1,3], [0,3], [3,3], [0,3] ],
+      // "idle-ne": [ [0,1] ],
+      // "idle-nw": [ [0,3] ],
+      // "idle-se": [ [0,1] ],
+      // "idle-sw": [ [0,3] ],
+      // "walk-ne": [ [1,1], [0,1], [3,1], [0,1] ],
+      // "walk-nw": [ [1,3], [0,3], [3,3], [0,3] ],
+      // "walk-se": [ [1,1], [0,1], [3,1], [0,1] ],
+      // "walk-sw": [ [1,3], [0,3], [3,3], [0,3] ],
       
-      "fire": [ [0,4], [1,4], [2,4], [3,4] ],
+      // "fire": [ [0,4], [1,4], [2,4], [3,4] ],
     }
 
     this.currentAnimation = config.currentAnimation || "idle-down"; //EQUAL TO KEY IN ANIMATIONS SET
