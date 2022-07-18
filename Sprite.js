@@ -89,7 +89,7 @@ class Sprite {
     const x = this.gameObject.x - 8;
     const y = this.gameObject.y - 18;
 
-    // this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
+    this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 5, y + 5, 23, 23); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
     // console.log("current pre: " + this.currentAnimationFrame);
     // console.log("frame pre: " + this.frame);
