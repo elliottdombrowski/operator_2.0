@@ -15,8 +15,8 @@ body {
   height: 384px;
   outline: 1px solid black;
   margin: 0 auto;
-  transform: scale(2) translateY(50%);
-  /* transform: scale(1) translateY(50%); */
+  /* transform: scale(2) translateY(50%); */
+  transform: scale(1) translateY(50%);
 }
 
 .game-container canvas {

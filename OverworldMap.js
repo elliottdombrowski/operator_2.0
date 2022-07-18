@@ -22,7 +22,7 @@ class OverworldMap {
 
 window.OverworldMaps = {
   ApartmentOne: {
-    lowerSrc: "/assets/size-test-export.png",
+    lowerSrc: "/assets/apt-1.png",
     upperSrc: "",
     //CREATES GAME OBJECTS DYNAMICALLY PER MAP
     gameObjects: {
