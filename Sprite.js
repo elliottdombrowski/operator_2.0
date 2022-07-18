@@ -21,14 +21,14 @@ class Sprite {
     //CONFIGURING ANIMATIONS / INITIAL STATE
     this.animations = config.animations || {
       //4 DIRECTIONAL IDLE / WALK ANIMATIONS
-      "idle-down": [ [0,0] ],
-      "idle-right": [ [0,1] ],
+      "idle-right": [ [0,0] ],
+      "idle-left": [ [0,1] ],
       "idle-up": [ [0,2] ],
-      "idle-left": [ [0,3] ],
-      "walk-down": [ [1,0], [0,0], [3,0], [0,0] ],
-      "walk-right": [ [1,1], [0,1], [3,1], [0,1] ],
-      "walk-up": [ [1,2], [0,2], [3,2], [0,2] ],
-      "walk-left": [ [1,3], [0,3], [3,3], [0,3] ],
+      "idle-down": [ [0,3] ],
+      "walk-right": [ [0,0], [1,0], [2,0], [0,0], [3,0], [4,0] ],
+      "walk-left": [ [0,1], [1,1], [2,1], [0,1], [3,1], [4,1] ],
+      "walk-up": [ [0,2], [1,2], [2,2], [0,2], [3,2], [4,2] ],
+      "walk-down": [ [0,3], [1,3], [2,3], [0,3], [3,3], [4,3] ],
       
       //8 DIRECTIONAL IDLE / WALK ANIMATIONS
       "idle-ne": [ [0,1] ],
@@ -89,7 +89,7 @@ class Sprite {
     const x = this.gameObject.x - 8;
     const y = this.gameObject.y - 18;
 
-    this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
+    // this.isShadowLoaded && ctx.drawImage(this.shadow, 0, 0, 32, 32, x + 7, y + 38, 16, 16); //NUDGING SHADOWS TO CENTER UNDER NPCS
 
     // console.log("current pre: " + this.currentAnimationFrame);
     // console.log("frame pre: " + this.frame);
@@ -98,10 +98,10 @@ class Sprite {
     // console.log("frameX, frameY: " + frameX + "," + frameY);
 
     this.isLoaded && ctx.drawImage(this.image,
-      frameX * 32, frameY * 48, //LEFT / TOP CUT
-      32, 48, //SIZE OF CUT
+      frameX * 32, frameY * 32, //LEFT / TOP CUT
+      32, 32, //SIZE OF CUT
       x, y,
-      32, 48 //SIZE OF DRAW
+      32, 32 //SIZE OF DRAW
     )
     
     this.updateAnimationProgress();
