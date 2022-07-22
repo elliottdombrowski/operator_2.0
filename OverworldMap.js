@@ -31,6 +31,11 @@ window.OverworldMaps = {
         x: utils.withGrid(16),
         y: utils.withGrid(12),
       }),
+      // ovenFlame: new Person({
+      //   x: utils.withGrid(16),
+      //   y: utils.withGrid(8),
+      //   src: '/assets/oven-anim.gif'
+      // })
       // npc1: new Person({
       //   x: utils.withGrid(20),
       //   y: utils.withGrid(12),
