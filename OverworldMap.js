@@ -22,10 +22,10 @@ class OverworldMap {
 
 window.OverworldMaps = {
   ApartmentOne: {
-    lowerSrc: "/assets/apt-1-hallway.png",
-    upperSrc: "/assets/apt-1-hallway-upper.png",
-    // lowerSrc: "/assets/apt-1.png",
-    // upperSrc: "/assets/apt-1-upper.png",
+    lowerSrc: "/assets/maps/apt1-hallway/apt-1-hallway.png",
+    upperSrc: "/assets/maps/apt1-hallway/apt-1-hallway-upper.png",
+    // lowerSrc: "/assets/apt1/apt-1.png",
+    // upperSrc: "/assets/apt1/apt-1-upper.png",
     //CREATES GAME OBJECTS DYNAMICALLY PER MAP
     gameObjects: {
       hero: new Person({
